@@ -1,6 +1,5 @@
 # Kibana is served by a back end server. This setting specifies the port to use.
-#server.port: 5601
-
+server.port: 5610
 # Specifies the address to which the Kibana server will bind. IP addresses and host names are both valid values.
 # The default is 'localhost', which usually means remote machines will not be able to connect.
 # To allow connections from remote users, set this parameter to a non-loopback address.
@@ -25,8 +24,7 @@
 #server.name: "your-hostname"
 
 # The URLs of the Elasticsearch instances to use for all your queries.
-#elasticsearch.hosts: ["http://localhost:9200"]
-
+elasticsearch.hosts: ['http://localhost:9201']
 # When this setting's value is true Kibana uses the hostname specified in the server.host
 # setting. When the value of this setting is false, Kibana uses the hostname of the host
 # that connects to this Kibana instance.
@@ -112,3 +110,21 @@
 # Specifies locale to be used for all localizable strings, dates and number formats.
 # Supported languages are the following: English - en , by default , Chinese - zh-CN .
 #i18n.locale: "en"
+xpack.ml.enabled: false
+xpack.graph.enabled: false
+xpack.canvas.enabled: false
+xpack.cloud.enabled: false
+# xpack.licensing.enabled: false
+xpack.siem.enabled: false
+xpack.spaces.enabled: false
+# xpack.translations.enabled: false
+# console.enabled: false
+xpack.grokdebugger.enabled: false
+# discover.enabled: false
+xpack.security.enabled: true
+xpack.maps.enabled: false
+newsfeed.enabled: false
+xpack.license_management.enabled: false
+# xpack.rollup.enabled: false
+# xpack.monitoring.enabled: false
+xpack.monitoring.ui.enabled: false
