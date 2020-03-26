@@ -82,63 +82,63 @@ export default function(kibana) {
       },
       styleSheetPaths: resolve(__dirname, 'public/index.scss'),
       links: [
-        {
-          id: 'kibana:discover',
-          title: i18n.translate('kbn.discoverTitle', {
-            defaultMessage: 'Discover',
-          }),
-          order: -1003,
-          url: `${kbnBaseUrl}#/discover`,
-          icon: 'plugins/kibana/assets/discover.svg',
-          euiIconType: 'discoverApp',
-        },
-        {
-          id: 'kibana:visualize',
-          title: i18n.translate('kbn.visualizeTitle', {
-            defaultMessage: 'Visualize',
-          }),
-          order: -1002,
-          url: `${kbnBaseUrl}#/visualize`,
-          icon: 'plugins/kibana/assets/visualize.svg',
-          euiIconType: 'visualizeApp',
-        },
-        {
-          id: 'kibana:dashboard',
-          title: i18n.translate('kbn.dashboardTitle', {
-            defaultMessage: 'Dashboard',
-          }),
-          order: -1001,
-          url: `${kbnBaseUrl}#/dashboards`,
-          // The subUrlBase is the common substring of all urls for this app. If not given, it defaults to the url
-          // above. This app has to use a different subUrlBase, in addition to the url above, because "#/dashboard"
-          // routes to a page that creates a new dashboard. When we introduced a landing page, we needed to change
-          // the url above in order to preserve the original url for BWC. The subUrlBase helps the Chrome api nav
-          // to determine what url to use for the app link.
-          subUrlBase: `${kbnBaseUrl}#/dashboard`,
-          icon: 'plugins/kibana/assets/dashboard.svg',
-          euiIconType: 'dashboardApp',
-        },
-        {
-          id: 'kibana:dev_tools',
-          title: i18n.translate('kbn.devToolsTitle', {
-            defaultMessage: 'Dev Tools',
-          }),
-          order: 9001,
-          url: '/app/kibana#/dev_tools',
-          icon: 'plugins/kibana/assets/wrench.svg',
-          euiIconType: 'devToolsApp',
-        },
-        {
-          id: 'kibana:management',
-          title: i18n.translate('kbn.managementTitle', {
-            defaultMessage: 'Management',
-          }),
-          order: 9003,
-          url: `${kbnBaseUrl}#/management`,
-          icon: 'plugins/kibana/assets/settings.svg',
-          euiIconType: 'managementApp',
-          linkToLastSubUrl: false,
-        },
+        // {
+        //   id: 'kibana:discover',
+        //   title: i18n.translate('kbn.discoverTitle', {
+        //     defaultMessage: 'Discover',
+        //   }),
+        //   order: -1003,
+        //   url: `${kbnBaseUrl}#/discover`,
+        //   icon: 'plugins/kibana/assets/discover.svg',
+        //   euiIconType: 'discoverApp',
+        // },
+        // {
+        //   id: 'kibana:visualize',
+        //   title: i18n.translate('kbn.visualizeTitle', {
+        //     defaultMessage: 'Visualize',
+        //   }),
+        //   order: -1002,
+        //   url: `${kbnBaseUrl}#/visualize`,
+        //   icon: 'plugins/kibana/assets/visualize.svg',
+        //   euiIconType: 'visualizeApp',
+        // },
+        // {
+        //   id: 'kibana:dashboard',
+        //   title: i18n.translate('kbn.dashboardTitle', {
+        //     defaultMessage: 'Dashboard',
+        //   }),
+        //   order: -1001,
+        //   url: `${kbnBaseUrl}#/dashboards`,
+        //   // The subUrlBase is the common substring of all urls for this app. If not given, it defaults to the url
+        //   // above. This app has to use a different subUrlBase, in addition to the url above, because "#/dashboard"
+        //   // routes to a page that creates a new dashboard. When we introduced a landing page, we needed to change
+        //   // the url above in order to preserve the original url for BWC. The subUrlBase helps the Chrome api nav
+        //   // to determine what url to use for the app link.
+        //   subUrlBase: `${kbnBaseUrl}#/dashboard`,
+        //   icon: 'plugins/kibana/assets/dashboard.svg',
+        //   euiIconType: 'dashboardApp',
+        // },
+        // {
+        //   id: 'kibana:dev_tools',
+        //   title: i18n.translate('kbn.devToolsTitle', {
+        //     defaultMessage: 'Dev Tools',
+        //   }),
+        //   order: 9001,
+        //   url: '/app/kibana#/dev_tools',
+        //   icon: 'plugins/kibana/assets/wrench.svg',
+        //   euiIconType: 'devToolsApp',
+        // },
+        // {
+        //   id: 'kibana:management',
+        //   title: i18n.translate('kbn.managementTitle', {
+        //     defaultMessage: 'Management',
+        //   }),
+        //   order: 9003,
+        //   url: `${kbnBaseUrl}#/management`,
+        //   icon: 'plugins/kibana/assets/settings.svg',
+        //   euiIconType: 'managementApp',
+        //   linkToLastSubUrl: false,
+        // },
       ],
 
       savedObjectsManagement: {
