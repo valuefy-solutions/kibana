@@ -85,6 +85,8 @@ class HeaderHelpMenuUI extends Component<Props, State> {
   }
 
   public render() {
+    return null;
+    
     const { intl, kibanaVersion, useDefaultContent, kibanaDocLink } = this.props;
     const { helpExtension } = this.state;
 
