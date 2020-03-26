@@ -21,11 +21,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Home } from './home';
 import { FeatureDirectory } from './feature_directory';
-import { TutorialDirectory } from './tutorial_directory';
-import { Tutorial } from './tutorial/tutorial';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
-import { getTutorial } from '../load_tutorials';
-import { replaceTemplateStrings } from './tutorial/replace_template_strings';
 import { telemetryOptInProvider } from '../kibana_services';
 import chrome from 'ui/chrome';
 
@@ -36,34 +32,9 @@ export function HomeApp({ directories }) {
   const { setOptInNoticeSeen, getOptIn } = telemetryOptInProvider;
   const savedObjectsClient = chrome.getSavedObjectsClient();
 
-  const renderTutorialDirectory = props => {
-    return (
-      <TutorialDirectory
-        addBasePath={chrome.addBasePath}
-        openTab={props.match.params.tab}
-        isCloudEnabled={isCloudEnabled}
-      />
-    );
-  };
-
-  const renderTutorial = props => {
-    return (
-      <Tutorial
-        addBasePath={chrome.addBasePath}
-        isCloudEnabled={isCloudEnabled}
-        getTutorial={getTutorial}
-        replaceTemplateStrings={replaceTemplateStrings}
-        tutorialId={props.match.params.id}
-        bulkCreate={savedObjectsClient.bulkCreate}
-      />
-    );
-  };
-
   return (
     <Router>
       <Switch>
-        <Route path="/home/tutorial/:id" render={renderTutorial} />
-        <Route path="/home/tutorial_directory/:tab?" render={renderTutorialDirectory} />
         <Route path="/home/feature_directory">
           <FeatureDirectory addBasePath={chrome.addBasePath} directories={directories} />
         </Route>

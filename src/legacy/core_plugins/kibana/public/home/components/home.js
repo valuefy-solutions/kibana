@@ -20,12 +20,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Synopsis } from './synopsis';
-import { AddData } from './add_data';
 import { FormattedMessage } from '@kbn/i18n/react';
 import chrome from 'ui/chrome';
 
 import {
-  EuiButton,
   EuiPage,
   EuiPanel,
   EuiTitle,
@@ -33,13 +31,14 @@ import {
   EuiFlexGroup,
   EuiFlexItem,
   EuiFlexGrid,
-  EuiText,
   EuiPageBody,
   EuiScreenReaderOnly,
 } from '@elastic/eui';
 
 import { Welcome } from './welcome';
 import { FeatureCatalogueCategory } from 'ui/registry/feature_catalogue';
+
+const allowedFeatures = ['apm', 'uptime', 'infralogging', 'infraops'];
 
 const KEY_ENABLE_WELCOME = 'home:welcome:show';
 
@@ -117,7 +116,11 @@ export class Home extends Component {
     const { addBasePath, directories } = this.props;
     return directories
       .filter(directory => {
-        return directory.showOnHomePage && directory.category === category;
+        return (
+          directory.showOnHomePage &&
+          directory.category === category &&
+          allowedFeatures.indexOf(directory.id) >= 0
+        );
       })
       .map(directory => {
         return (
@@ -145,12 +148,6 @@ export class Home extends Component {
             </h1>
           </EuiScreenReaderOnly>
 
-          <AddData
-            apmUiEnabled={apmUiEnabled}
-            mlEnabled={mlEnabled}
-            isNewKibanaInstance={this.state.isNewKibanaInstance}
-          />
-
           <EuiSpacer size="l" />
 
           <EuiFlexGroup>
@@ -170,45 +167,9 @@ export class Home extends Component {
                 </EuiFlexGrid>
               </EuiPanel>
             </EuiFlexItem>
-            <EuiFlexItem>
-              <EuiPanel paddingSize="l">
-                <EuiTitle size="s">
-                  <h2>
-                    <FormattedMessage
-                      id="kbn.home.directories.manage.nameTitle"
-                      defaultMessage="Manage and Administer the Elastic Stack"
-                    />
-                  </h2>
-                </EuiTitle>
-                <EuiSpacer size="m" />
-                <EuiFlexGrid columns={2}>
-                  {this.renderDirectories(FeatureCatalogueCategory.ADMIN)}
-                </EuiFlexGrid>
-              </EuiPanel>
-            </EuiFlexItem>
           </EuiFlexGroup>
 
           <EuiSpacer size="l" />
-
-          <EuiFlexGroup justifyContent="center">
-            <EuiFlexItem grow={false} className="eui-textCenter">
-              <EuiText size="s" color="subdued">
-                <p>
-                  <FormattedMessage
-                    id="kbn.home.directories.notFound.description"
-                    defaultMessage="Didn’t find what you were looking for?"
-                  />
-                </p>
-              </EuiText>
-              <EuiSpacer size="s" />
-              <EuiButton href="#/home/feature_directory">
-                <FormattedMessage
-                  id="kbn.home.directories.notFound.viewFullButtonLabel"
-                  defaultMessage="View full directory of Kibana plugins"
-                />
-              </EuiButton>
-            </EuiFlexItem>
-          </EuiFlexGroup>
         </EuiPageBody>
       </EuiPage>
     );
