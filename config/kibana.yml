@@ -118,7 +118,7 @@ xpack.cloud.enabled: false
 xpack.siem.enabled: false
 xpack.spaces.enabled: false
 # xpack.translations.enabled: false
-# console.enabled: false
+console.enabled: true
 xpack.grokdebugger.enabled: false
 # discover.enabled: false
 xpack.security.enabled: true
