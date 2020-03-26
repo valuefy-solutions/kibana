@@ -43,33 +43,7 @@ export const InvalidNodeError: React.FunctionComponent<InvalidNodeErrorProps> = 
               />
             </p>
           }
-          actions={
-            <EuiFlexGroup>
-              <EuiFlexItem>
-                <EuiButton
-                  href={`${basePath}/app/kibana#/home/tutorial_directory/metrics`}
-                  color="primary"
-                  fill
-                >
-                  <FormattedMessage
-                    id="xpack.infra.homePage.noMetricsIndicesInstructionsActionLabel"
-                    defaultMessage="View setup instructions"
-                  />
-                </EuiButton>
-              </EuiFlexItem>
-              <EuiFlexItem>
-                <ViewSourceConfigurationButton
-                  data-test-subj="configureSourceButton"
-                  hrefBase={ViewSourceConfigurationButtonHrefBase.infrastructure}
-                >
-                  <FormattedMessage
-                    id="xpack.infra.configureSourceActionLabel"
-                    defaultMessage="Change source configuration"
-                  />
-                </ViewSourceConfigurationButton>
-              </EuiFlexItem>
-            </EuiFlexGroup>
-          }
+          actions={null}
         />
       )}
     </WithKibanaChrome>

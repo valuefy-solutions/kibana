@@ -95,9 +95,6 @@ export function Home({ tab }: Props) {
               </EuiButtonEmpty>
             </SettingsLink>
           </EuiFlexItem>
-          <EuiFlexItem grow={false}>
-            <SetupInstructionsLink />
-          </EuiFlexItem>
         </EuiFlexGroup>
       </ApmHeader>
       <EuiTabs>

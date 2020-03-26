@@ -80,37 +80,9 @@ export const SnapshotPage = injectUICapabilities((props: SnapshotPageProps) => {
                 defaultMessage: "Looks like you don't have any metrics indices.",
               })}
               message={i18n.translate('xpack.infra.homePage.noMetricsIndicesDescription', {
-                defaultMessage: "Let's add some!",
+                defaultMessage: "Contact your System Administrator",
               })}
-              actions={
-                <EuiFlexGroup>
-                  <EuiFlexItem>
-                    <EuiButton
-                      href={`${basePath}/app/kibana#/home/tutorial_directory/metrics`}
-                      color="primary"
-                      fill
-                      data-test-subj="infrastructureViewSetupInstructionsButton"
-                    >
-                      {i18n.translate(
-                        'xpack.infra.homePage.noMetricsIndicesInstructionsActionLabel',
-                        { defaultMessage: 'View setup instructions' }
-                      )}
-                    </EuiButton>
-                  </EuiFlexItem>
-                  {uiCapabilities.infrastructure.configureSource ? (
-                    <EuiFlexItem>
-                      <ViewSourceConfigurationButton
-                        data-test-subj="configureSourceButton"
-                        hrefBase={ViewSourceConfigurationButtonHrefBase.infrastructure}
-                      >
-                        {i18n.translate('xpack.infra.configureSourceActionLabel', {
-                          defaultMessage: 'Change source configuration',
-                        })}
-                      </ViewSourceConfigurationButton>
-                    </EuiFlexItem>
-                  ) : null}
-                </EuiFlexGroup>
-              }
+              actions={null}
               data-test-subj="noMetricsIndicesPrompt"
             />
           )}
