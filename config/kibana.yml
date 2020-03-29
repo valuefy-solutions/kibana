@@ -110,21 +110,21 @@ elasticsearch.hosts: ['http://localhost:9201']
 # Specifies locale to be used for all localizable strings, dates and number formats.
 # Supported languages are the following: English - en , by default , Chinese - zh-CN .
 #i18n.locale: "en"
-xpack.ml.enabled: false
-xpack.graph.enabled: false
-xpack.canvas.enabled: false
-xpack.cloud.enabled: false
-# xpack.licensing.enabled: false
-xpack.siem.enabled: false
-xpack.spaces.enabled: false
-# xpack.translations.enabled: false
-console.enabled: true
-xpack.grokdebugger.enabled: false
-# discover.enabled: false
-xpack.security.enabled: true
-xpack.maps.enabled: false
-newsfeed.enabled: false
-xpack.license_management.enabled: false
-# xpack.rollup.enabled: false
-# xpack.monitoring.enabled: false
-xpack.monitoring.ui.enabled: false
+# xpack.ml.enabled: false
+# xpack.graph.enabled: false
+# #xpack.canvas.enabled: false
+# # # xpack.cloud.enabled: false
+# # # xpack.licensing.enabled: false
+# xpack.siem.enabled: false
+# xpack.spaces.enabled: false
+# # # xpack.translations.enabled: false
+# # # console.enabled: true
+# # # xpack.grokdebugger.enabled: false
+# # # discover.enabled: false
+# # xpack.security.enabled: true
+# xpack.maps.enabled: false
+# newsfeed.enabled: false
+# xpack.license_management.enabled: false
+# xpack.rollup.enabled: true
+# # xpack.monitoring.enabled: false
+# xpack.monitoring.ui.enabled: false

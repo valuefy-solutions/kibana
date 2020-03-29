@@ -38,7 +38,7 @@ import {
 import { Welcome } from './welcome';
 import { FeatureCatalogueCategory } from 'ui/registry/feature_catalogue';
 
-const allowedFeatures = ['apm', 'uptime', 'infralogging', 'infraops'];
+const allowedFeatures = ['apm', 'uptime', 'infralogging', 'infraops', 'rollup_jobs'];
 
 const KEY_ENABLE_WELCOME = 'home:welcome:show';
 
@@ -164,6 +164,22 @@ export class Home extends Component {
                 <EuiSpacer size="m" />
                 <EuiFlexGrid columns={2} gutterSize="s">
                   {this.renderDirectories(FeatureCatalogueCategory.DATA)}
+                </EuiFlexGrid>
+              </EuiPanel>
+            </EuiFlexItem>
+            <EuiFlexItem>
+              <EuiPanel paddingSize="l">
+                <EuiTitle size="s">
+                  <h2>
+                    <FormattedMessage
+                      id="kbn.home.directories.manage.nameTitle"
+                      defaultMessage="Manage and Administer the Elastic Stack"
+                    />
+                  </h2>
+                </EuiTitle>
+                <EuiSpacer size="m" />
+                <EuiFlexGrid columns={2}>
+                  {this.renderDirectories(FeatureCatalogueCategory.ADMIN)}
                 </EuiFlexGrid>
               </EuiPanel>
             </EuiFlexItem>
